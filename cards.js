@@ -1,6 +1,6 @@
 const tarotCards = [ 
     {
-    name: "theMagician",
+    name: "theMagician", 
     desc: "description goes here",
     },
     {
@@ -347,7 +347,11 @@ app.selectCard = function (){
     const displayName = app.getDisplayName(app.randomCard);    
     $('.faceUp img').attr("src",`assets/${app.randomCard.name}.jpg`);
     $('.cardDescription h3').text(app.cardDisplayName) // adding .text will add it as text, rather than as html
-    $('.cardDescription p').text(app.randomCard.desc) 
+    $('.cardDescription p').text(app.randomCard.desc)
+
+    $('.cardDescription').removeClass('hide')
+
+    $('.cardDescription p').text(app.randomCard.desc)
     $('.faceDown').addClass('hide')
     }) // ends the selectCard function
 } // ends the app.selectcard
@@ -359,15 +363,17 @@ app.shuffleCards = function () {
 
         $('.deckOfCards img').addClass('animated flipInY').one('animationend', function () {
             $(this).removeClass('animated flipInY')
-        }); 
+        });
+
+        $('.cardDescription').addClass('hide')
 
         $('.cardDescription h3').text("") // This clears out the description of the cards when the user clicks shuffle
         $('.cardDescription p').text("") 
     })
 } // ends the shuffleCards function 
 
-app.getDisplayName = function(cardObject) {
-    app.cardDisplayName = cardObject.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
+app.getDisplayName = function(item) {
+    app.cardDisplayName = item.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
     return app.cardDisplayName;
 }
 

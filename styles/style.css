@@ -175,21 +175,21 @@ body {
   color: white;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .wrapper {
   margin: 0 auto;
   max-width: 1280px;
   width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section {
+  border: 1px solid tomato;
 }
 
 header {
@@ -205,34 +205,36 @@ h1 {
 }
 
 .cardArea {
+  border: 1px solid tomato;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .cardDescription {
-  padding: 5rem;
+  background: #c3bbcc;
+  padding: 2rem;
+  margin: 0 auto;
 }
 
 .deckOfCards {
-  position: absolute;
+  padding-bottom: 20px;
+  height: 392px;
+  width: 225px;
 }
 
 .deckOfCards img {
-  border-radius: 10%;
+  border-radius: 50px;
+  width: 100%;
 }
 
 .faceUp img, .faceDown img {
-  -webkit-box-shadow: 1px 1px #f59300, 2px 2px #fa9600, 3px 3px #ff9900, 4px 4px #ff9b05, 5px 5px #ff9d0a, 6px 6px #ff9f0f, 7px 7px #ffa114, 8px 8px #ffa31a, 9px 9px #ffa51f, 10px 10px #ffa724, 11px 11px #ffa929, 12px 12px #ffab2e, 13px 13px #ffad33, 14px 14px #ffaf38, 15px -15px #ffb13d;
-          box-shadow: 1px 1px #f59300, 2px 2px #fa9600, 3px 3px #ff9900, 4px 4px #ff9b05, 5px 5px #ff9d0a, 6px 6px #ff9f0f, 7px 7px #ffa114, 8px 8px #ffa31a, 9px 9px #ffa51f, 10px 10px #ffa724, 11px 11px #ffa929, 12px 12px #ffab2e, 13px 13px #ffad33, 14px 14px #ffaf38, 15px -15px #ffb13d;
-}
-
-.faceDown {
-  position: absolute;
-}
-
-.deckFaceDown li {
-  position: absolute;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15), 2px 2px 0 0px #FCA311, 3px 3px 1px 0px rgba(0, 0, 0, 0.15), 4px 4px 0 0px #FCA311, 5px 5px 1px 0px rgba(0, 0, 0, 0.15), 6px 6px 0 0px #FCA311, 7px 7px 1px 0px rgba(0, 0, 0, 0.15), 8px 8px 0 0px #FCA311, 9px 9px 1px 0px rgba(0, 0, 0, 0.15), 10px 10px 0 0px #FCA311;
+          box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15), 2px 2px 0 0px #FCA311, 3px 3px 1px 0px rgba(0, 0, 0, 0.15), 4px 4px 0 0px #FCA311, 5px 5px 1px 0px rgba(0, 0, 0, 0.15), 6px 6px 0 0px #FCA311, 7px 7px 1px 0px rgba(0, 0, 0, 0.15), 8px 8px 0 0px #FCA311, 9px 9px 1px 0px rgba(0, 0, 0, 0.15), 10px 10px 0 0px #FCA311;
 }
 
 .hide {

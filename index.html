@@ -14,36 +14,26 @@
         <h1>*~Welcome to le Magic Tarot *~</h1>
     </header>
     <main>
+        <div class="welcome">
+            <h4>the magic of tarot will guide you towards a resolution to your thoughts and desires. to begin, please enter a question, topic about which you request guidance.</h4>
+            <form>
+                <input class="form-control input-lg" type="text" placeholder="What would you like guidance on today?">
+            </form>
+        </div>
+        <div class="buttons">
+            <button id="selectCard">Choose a Card</button>
+            <button id="shuffleCards">Shuffle</button>
+        </div>    
         <div class="cardArea">
-            <section>
-                <button id="selectCard">Choose a Card</button>
-                <button id="shuffleCards">Shuffle</button>
-                <div class="deckOfCards">
-                    <div class="faceUp">
-                        <img src="" alt="">                        
-                    </div>
-                    <div class="faceDown">
-                        <ul class="deckFaceDown">
-                            <li><img class="card card1" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card2" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card3" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card4" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card5" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card6" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card7" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card8" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card9" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card10" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card11" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card12" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card13" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card14" src="assets/cardBack.svg" alt=""></li>
-                            <li><img class="card card15" src="assets/cardBack.svg" alt=""></li>    
-                        </ul>
-                    </div> <!-- /.faceDown-->
-                </div> <!-- /.deckOfCards-->
-            </section>
-            <div class="cardDescription"> 
+            <div class="deckOfCards"> 
+                <div class="faceUp">
+                    <img src="" alt="">                        
+                </div>
+                <div class="faceDown">
+                    <img src="assets/cardBack.svg" alt="">             
+                </div> <!-- /.faceDown-->
+            </div> <!-- /.deckOfCards-->
+            <div class="cardDescription hide"> 
                 <h3></h3> <!-- title of the returned card-->
                 <p></p><!-- description of the returned card-->
             </div> <!-- /.cardDescription-->
