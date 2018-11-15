@@ -198,6 +198,12 @@ header {
   color: #3e4149;
 }
 
+h1 {
+  margin: 0 auto;
+  padding: 0;
+  text-transform: uppercase;
+}
+
 .cardArea {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,15 +214,28 @@ header {
   padding: 5rem;
 }
 
+.deckOfCards {
+  position: absolute;
+}
+
 .deckOfCards img {
   border-radius: 10%;
 }
 
-.faceDown img {
+.faceUp img, .faceDown img {
+  -webkit-box-shadow: 1px 1px #f59300, 2px 2px #fa9600, 3px 3px #ff9900, 4px 4px #ff9b05, 5px 5px #ff9d0a, 6px 6px #ff9f0f, 7px 7px #ffa114, 8px 8px #ffa31a, 9px 9px #ffa51f, 10px 10px #ffa724, 11px 11px #ffa929, 12px 12px #ffab2e, 13px 13px #ffad33, 14px 14px #ffaf38, 15px -15px #ffb13d;
+          box-shadow: 1px 1px #f59300, 2px 2px #fa9600, 3px 3px #ff9900, 4px 4px #ff9b05, 5px 5px #ff9d0a, 6px 6px #ff9f0f, 7px 7px #ffa114, 8px 8px #ffa31a, 9px 9px #ffa51f, 10px 10px #ffa724, 11px 11px #ffa929, 12px 12px #ffab2e, 13px 13px #ffad33, 14px 14px #ffaf38, 15px -15px #ffb13d;
+}
+
+.faceDown {
   position: absolute;
 }
 
 .deckFaceDown li {
   position: absolute;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -10,6 +10,12 @@ header {
     color: #3e4149;
 }
 
+h1 {
+    margin: 0 auto; 
+    padding: 0; 
+    text-transform: uppercase;
+}
+
 .cardArea {
     display: flex;
 }
@@ -18,14 +24,40 @@ header {
     padding: 5rem;
 }
 
+.deckOfCards {
+    position: absolute;
+}
+
 .deckOfCards img {
     border-radius: 10%;
 }
 
-.faceDown img {
+.faceUp img, .faceDown img {
+    box-shadow: 1px 1px hsla(36, 100%, 48%, 1),
+                2px 2px hsla(36, 100%, 49%, 1),
+                3px 3px hsla(36, 100%, 50%, 1),
+                4px 4px hsla(36, 100%, 51%, 1),
+                5px 5px hsla(36, 100%, 52%, 1),
+                6px 6px hsla(36, 100%, 53%, 1),
+                7px 7px hsla(36, 100%, 54%, 1),
+                8px 8px hsla(36, 100%, 55%, 1),
+                9px 9px hsla(36, 100%, 56%, 1),
+                10px 10px hsla(36, 100%, 57%, 1),
+                11px 11px hsla(36, 100%, 58%, 1),
+                12px 12px hsla(36, 100%, 59%, 1),
+                13px 13px hsla(36, 100%, 60%, 1),
+                14px 14px hsla(36, 100%, 61%, 1),
+                15px -15px hsla(36, 100%, 62%, 1),
+}
+
+.faceDown {
     position: absolute;
 }
 
 .deckFaceDown li {
     position: absolute;
+}
+
+.hide {
+    display: none;
 }

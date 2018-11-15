@@ -236,7 +236,7 @@ const tarotCards = [
     desc: "description goes here",
     },
     {
-    name: "eigthOfSwords",
+    name: "eightOfSwords",
     desc: "description goes here",
     },
     {
@@ -345,10 +345,10 @@ app.selectCard = function (){
     }
     app.randomCard = getRandomCard(tarotCards);
     const displayName = app.getDisplayName(app.randomCard);    
-
-    $('.deckOfCards img').attr("src",`assets/${app.randomCard.name}.jpg`);
+    $('.faceUp img').attr("src",`assets/${app.randomCard.name}.jpg`);
     $('.cardDescription h3').text(app.cardDisplayName) // adding .text will add it as text, rather than as html
     $('.cardDescription p').text(app.randomCard.desc) 
+    $('.faceDown').addClass('hide')
     }) // ends the selectCard function
 } // ends the app.selectcard
 
@@ -356,9 +356,13 @@ app.shuffleCards = function () {
     $('#shuffleCards').on('click', function (clickEvent) { // on "shuffle," two things will happen: set the img attr to the default image, some sort of shuffle animation. 
         clickEvent.preventDefault(); // do I need this on a button, or just a form? 
         $('.deckOfCards img').attr("src", `assets/cardback.svg`);
-        $('.deckOfCards img').addClass('animated flipInY'); // the animation? 
+
+        $('.deckOfCards img').addClass('animated flipInY').one('animationend', function () {
+            $(this).removeClass('animated flipInY')
+        }); 
+
         $('.cardDescription h3').text("") // This clears out the description of the cards when the user clicks shuffle
-        $('.cardDescription p').text("") // 
+        $('.cardDescription p').text("") 
     })
 } // ends the shuffleCards function 
 
