@@ -1,0 +1,41 @@
+.wrapper {
+    margin: 0 auto; 
+    max-width: 1280px;
+    width: 80%;
+}
+
+header {
+    text-align: center;
+    background: #c3bbcc;
+    color: #3e4149;
+}
+
+ul {
+    margin: 0 ;
+    padding: 0;
+    
+    li {
+        list-style: none;
+        margin: 0; 
+        padding: 0;
+    }
+}
+.cardArea {
+    display: flex;
+}
+
+.cardDescription {
+    padding: 5rem;
+}
+
+.deckOfCards img {
+    border-radius: 10%;
+}
+
+.faceDown img {
+    position: absolute;
+}
+
+.deckFaceDown li {
+    position: absolute;
+}
