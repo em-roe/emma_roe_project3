@@ -1,48 +1,3 @@
-.wrapper {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 80%;
-}
-
-header {
-  text-align: center;
-  background: #c3bbcc;
-  color: #3e4149;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cardArea {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.cardDescription {
-  padding: 5rem;
-}
-
-.deckOfCards img {
-  border-radius: 10%;
-}
-
-.faceDown img {
-  position: absolute;
-}
-
-.deckFaceDown li {
-  position: absolute;
-}
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block;
 }
@@ -215,8 +170,53 @@ img {
 }
 
 body {
-  background: #2a0d47 url(../assets/transparentBG.svg);
+  background: #230b3b url(../assets/transparentBG.svg);
   height: 100vh;
   color: white;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 80%;
+}
+
+header {
+  text-align: center;
+  background: #c3bbcc;
+  color: #3e4149;
+}
+
+.cardArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cardDescription {
+  padding: 5rem;
+}
+
+.deckOfCards img {
+  border-radius: 10%;
+}
+
+.faceDown img {
+  position: absolute;
+}
+
+.deckFaceDown li {
+  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */

@@ -9,7 +9,18 @@ img {
 }
 
 body {
-    background: #2a0d47 url(../assets/transparentBG.svg);  
+    background: #230b3b url(../assets/transparentBG.svg);  
     height: 100vh;  
     color: white;
+}
+
+ul {
+    margin: 0 ;
+    padding: 0;
+    
+    li {
+        list-style: none;
+        margin: 0; 
+        padding: 0;
+    }
 }
