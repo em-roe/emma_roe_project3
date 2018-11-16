@@ -42,8 +42,7 @@ h1 {
 }
 
 .cardArea {
-    display: flex; 
-    flex-direction: row;
+    position: relative;
 }
  
 .cardDescription {
@@ -53,6 +52,9 @@ h1 {
     height: 200px;
     width: 200px;
     border-radius: 13%;
+    position: absolute; 
+    top: 0; 
+    right: 0;
 
     h3 {
         margin: 0 auto;
@@ -66,16 +68,27 @@ h1 {
 
 .deckOfCards {
     padding-bottom: 20px;
-    height: 392px;
-    width: 225px;
+    // width: 80%;
+    // max-width:1080px;
+    margin: 0 auto;
+    display: flex; 
+    flex-direction: row;
 }
 
-.deckOfCards img {
+.deckOfCards img, .three img {
     border-radius: 50px;
-    width: 100%;
 }
 
-.faceUp img, .faceDown img { // these are the box shadows for the "deck" of cards styling
+.three {
+    display: flex;
+    flex-direction: row;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+}
+
+
+.deckOfCards img { // these are the box shadows for the "deck" of cards styling
     box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.15),
                 2px 2px 0 0px #FCA311,
                 3px 3px 1px 0px rgba(0,0,0,0.15),

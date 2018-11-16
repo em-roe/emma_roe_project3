@@ -345,9 +345,10 @@ app.enterQuestion = function(){
 
 app.shuffleCards = function () {
     $('#shuffleCards').on('click', function () {  
-        $('.faceUp img').attr("src", `assets/cardback.svg`);
+        app.reset();
+        $('.deckOfCards img').attr("src", `assets/cardback.svg`);
 
-        $('.faceUp img').addClass('animated flipInY').one('animationend', function () {
+        $('.deckOfCards img').addClass('animated flipInY').one('animationend', function () {
             $(this).removeClass('animated flipInY')
         });
 
@@ -363,12 +364,11 @@ app.getRandomCard = function(listOfCards) {
 
 app.selectCard = function (){ 
     $('#selectCard').on('click', function(clickEvent){
-        console.log('card selected');
-    clickEvent.preventDefault();
+    app.reset();
     const randomCard = app.getRandomCard(tarotCards);
     // console.log(randomCard);
        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
-    $('.faceUp img').attr("src",`assets/${randomCard.name}.jpg`);
+    $('.deckOfCards img').attr("src",`assets/${randomCard.name}.jpg`);
     $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
     $('.cardDescription p').text(randomCard.desc)
 
@@ -403,10 +403,8 @@ app.selectThree = function () {
         }
 
         app.threeCards.forEach(function(item) {
-            // $('.three').attr("src", `assets/${item.name}.jpg`);
             $('.three').append(`<img src="assets/${item}.jpg" alt="alt" class="threeCardsImg">`);
         });
-
 
     }) // ends the selectCard function
 

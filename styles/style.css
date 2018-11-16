@@ -241,13 +241,7 @@ h1 {
 }
 
 .cardArea {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  position: relative;
 }
 
 .cardDescription {
@@ -257,6 +251,9 @@ h1 {
   height: 200px;
   width: 200px;
   border-radius: 13%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .cardDescription h3 {
@@ -270,16 +267,34 @@ h1 {
 
 .deckOfCards {
   padding-bottom: 20px;
-  height: 392px;
-  width: 225px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.deckOfCards img, .three img {
+  border-radius: 50px;
+}
+
+.three {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .deckOfCards img {
-  border-radius: 50px;
-  width: 100%;
-}
-
-.faceUp img, .faceDown img {
   -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15), 2px 2px 0 0px #FCA311, 3px 3px 1px 0px rgba(0, 0, 0, 0.15), 4px 4px 0 0px #FCA311, 5px 5px 1px 0px rgba(0, 0, 0, 0.15), 6px 6px 0 0px #FCA311, 7px 7px 1px 0px rgba(0, 0, 0, 0.15), 8px 8px 0 0px #FCA311, 9px 9px 1px 0px rgba(0, 0, 0, 0.15), 10px 10px 0 0px #FCA311;
           box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15), 2px 2px 0 0px #FCA311, 3px 3px 1px 0px rgba(0, 0, 0, 0.15), 4px 4px 0 0px #FCA311, 5px 5px 1px 0px rgba(0, 0, 0, 0.15), 6px 6px 0 0px #FCA311, 7px 7px 1px 0px rgba(0, 0, 0, 0.15), 8px 8px 0 0px #FCA311, 9px 9px 1px 0px rgba(0, 0, 0, 0.15), 10px 10px 0 0px #FCA311;
 }
