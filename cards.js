@@ -327,8 +327,8 @@ const app = {}
 
 app.init = function (){
     app.selectCard();
+    app.selectThree();
     app.shuffleCards();
-    app.getDisplayName();
 }
 
 $(function () { // start document ready 
@@ -336,32 +336,12 @@ $(function () { // start document ready
 
 }); // end of document ready 
 
-app.selectCard = function (){
-    $('#selectCard').on('click', function(clickEvent){
-    clickEvent.preventDefault();
-    const getRandomCard = function(listOfCards){
-        const result = listOfCards[Math.floor((Math.random() * listOfCards.length))];
-        return result;
-    }
-    app.randomCard = getRandomCard(tarotCards);
-    const displayName = app.getDisplayName(app.randomCard);    
-    $('.faceUp img').attr("src",`assets/${app.randomCard.name}.jpg`);
-    $('.cardDescription h3').text(app.cardDisplayName) // adding .text will add it as text, rather than as html
-    $('.cardDescription p').text(app.randomCard.desc)
-
-    $('.cardDescription').removeClass('hide')
-
-    $('.cardDescription p').text(app.randomCard.desc)
-    $('.faceDown').addClass('hide')
-    }) // ends the selectCard function
-} // ends the app.selectcard
-
 app.shuffleCards = function () {
-    $('#shuffleCards').on('click', function (clickEvent) { // on "shuffle," two things will happen: set the img attr to the default image, some sort of shuffle animation. 
+    $('#shuffleCards').on('click', function (clickEvent) {  
         clickEvent.preventDefault(); // do I need this on a button, or just a form? 
-        $('.deckOfCards img').attr("src", `assets/cardback.svg`);
+        $('.faceDown img').attr("src", `assets/cardback.svg`);
 
-        $('.deckOfCards img').addClass('animated flipInY').one('animationend', function () {
+        $('.faceDown img').addClass('animated flipInY').one('animationend', function () {
             $(this).removeClass('animated flipInY')
         });
 
@@ -372,10 +352,57 @@ app.shuffleCards = function () {
     })
 } // ends the shuffleCards function 
 
-app.getDisplayName = function(item) {
-    app.cardDisplayName = item.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
-    return app.cardDisplayName;
+app.getRandomCard = function(listOfCards) {
+    const result = listOfCards[Math.floor((Math.random() * listOfCards.length))];
+    return result;
 }
+
+app.selectCard = function (){
+    $('#selectCard').on('click', function(clickEvent){
+    clickEvent.preventDefault();
+    const randomCard = app.getRandomCard(tarotCards);
+       const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
+    $('.faceUp img').attr("src",`assets/${randomCard.name}.jpg`);
+    $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
+    $('.cardDescription p').text(randomCard.desc)
+
+    $('.cardDescription').removeClass('hide')
+
+    $('.cardDescription p').text(randomCard.desc)
+    $('.faceDown').addClass('hide')
+    }) // ends the selectCard function
+} // ends the app.selectcard
+
+app.selectThree = function () {
+    $('#selectThree').on('click', function (clickEvent) {
+        clickEvent.preventDefault();
+        const randomCard = app.getRandomCard(tarotCards);
+        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
+        $('.faceUp img').attr("src", `assets/${randomCard.name}.jpg`);
+        $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
+        $('.cardDescription p').text(randomCard.desc)
+
+        $('.cardDescription').removeClass('hide')
+
+        $('.cardDescription p').text(randomCard.desc)
+        $('.faceDown').addClass('hide')
+
+        app.threeCards = [];
+        
+        for (i = 1; i < 4; i++){
+            app.randomCard = app.getRandomCard(tarotCards);
+            app.threeCards.push(app.randomCard.name);
+            console.log(app.threeCards)
+        }
+
+        app.threeCards.forEach(item => {
+            $('.three').attr("src", `assets/${randomCard.name}.jpg`);
+        });
+
+
+    }) // ends the selectCard function
+} // ends the app.selectcard
+
 
 
 
