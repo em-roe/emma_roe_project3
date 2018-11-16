@@ -17,7 +17,11 @@
         <div class="welcome">
             <h4>the magic of tarot will guide you towards a resolution to your thoughts and desires. to begin, please enter a question, topic about which you request guidance.</h4>
             <form>
-                <input class="form-control input-lg" type="text" placeholder="What would you like guidance on today?">
+
+                <label class="visuallyhidden" for="question">your question</label>
+                <input id="question" class="input" type="text" name="question" placeholder="Guidance? ">
+
+
             </form>
         </div>
         <div class="buttons">
@@ -28,16 +32,13 @@
         <div class="cardArea">
             <div class="deckOfCards"> 
                 <div class="faceUp single">
-                    <img src="" alt="">                        
+                    <img src="assets/cardback.svg" alt="">
                 </div>
                 <div class="three">
                     <img src="" alt="">
                     <img src="" alt="">
                     <img src="" alt="">
                 </div>
-                <div class="faceDown">
-                    <img src="assets/cardBack.svg" alt="">             
-                </div> <!-- /.faceDown-->
             </div> <!-- /.deckOfCards-->
             <div class="cardDescription hide"> 
                 <h3></h3> <!-- title of the returned card-->

@@ -339,16 +339,14 @@ $(function () { // start document ready
 app.shuffleCards = function () {
     $('#shuffleCards').on('click', function (clickEvent) {  
         clickEvent.preventDefault(); // do I need this on a button, or just a form? 
-        $('.faceDown img').attr("src", `assets/cardback.svg`);
+        $('.faceUp img').attr("src", `assets/cardback.svg`);
 
-        $('.faceDown img').addClass('animated flipInY').one('animationend', function () {
+        $('.faceUp img').addClass('animated flipInY').one('animationend', function () {
             $(this).removeClass('animated flipInY')
         });
 
-        $('.cardDescription').addClass('hide')
+        $('.cardDescription').addClass('hide') 
 
-        $('.cardDescription h3').text("") // This clears out the description of the cards when the user clicks shuffle
-        $('.cardDescription p').text("") 
     })
 } // ends the shuffleCards function 
 
