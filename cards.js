@@ -329,6 +329,7 @@ app.init = function (){
     app.selectCard();
     app.selectThree();
     app.shuffleCards();
+    app.enterQuestion();
 }
 
 $(function () { // start document ready 
@@ -336,9 +337,14 @@ $(function () { // start document ready
 
 }); // end of document ready 
 
+app.enterQuestion = function(){
+    $('.askQuestion').on('click', function (e) {
+        e.preventDefault(); 
+    });
+}
+
 app.shuffleCards = function () {
-    $('#shuffleCards').on('click', function (clickEvent) {  
-        clickEvent.preventDefault(); // do I need this on a button, or just a form? 
+    $('#shuffleCards').on('click', function () {  
         $('.faceUp img').attr("src", `assets/cardback.svg`);
 
         $('.faceUp img').addClass('animated flipInY').one('animationend', function () {
@@ -355,10 +361,12 @@ app.getRandomCard = function(listOfCards) {
     return result;
 }
 
-app.selectCard = function (){
+app.selectCard = function (){ 
     $('#selectCard').on('click', function(clickEvent){
+        console.log('card selected');
     clickEvent.preventDefault();
     const randomCard = app.getRandomCard(tarotCards);
+    // console.log(randomCard);
        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
     $('.faceUp img').attr("src",`assets/${randomCard.name}.jpg`);
     $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
@@ -372,18 +380,19 @@ app.selectCard = function (){
 } // ends the app.selectcard
 
 app.selectThree = function () {
-    $('#selectThree').on('click', function (clickEvent) {
-        clickEvent.preventDefault();
+    $('#selectThree').on('click', function () {
+        app.reset();
         const randomCard = app.getRandomCard(tarotCards);
-        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
-        $('.faceUp img').attr("src", `assets/${randomCard.name}.jpg`);
-        $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
-        $('.cardDescription p').text(randomCard.desc)
+        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); 
+        // $('.faceUp img').attr("src", `assets/${randomCard.name}.jpg`);
+        // $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
+        // $('.cardDescription p').text(randomCard.desc)
 
         $('.cardDescription').removeClass('hide')
 
         $('.cardDescription p').text(randomCard.desc)
         $('.faceDown').addClass('hide')
+        $('.three')
 
         app.threeCards = [];
         
@@ -393,12 +402,20 @@ app.selectThree = function () {
             console.log(app.threeCards)
         }
 
-        app.threeCards.forEach(item => {
-            $('.three').attr("src", `assets/${randomCard.name}.jpg`);
+        app.threeCards.forEach(function(item) {
+            // $('.three').attr("src", `assets/${item.name}.jpg`);
+            $('.three').append(`<img src="assets/${item}.jpg" alt="alt" class="threeCardsImg">`);
         });
 
 
     }) // ends the selectCard function
+
+    app.reset = function(){
+        $('.threeCardsImg').remove()
+        app.threeCards = [];
+        console.log("reset success", app.threeCards);
+    }
+
 } // ends the app.selectcard
 
 
