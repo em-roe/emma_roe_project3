@@ -254,26 +254,6 @@ input {
   display: flex;
 }
 
-.cardDescription {
-  background: #3e4149;
-  padding: 1rem;
-  margin: 0;
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.cardDescription h3 {
-  margin: 0 auto;
-  text-transform: uppercase;
-}
-
-.cardDescription p {
-  margin: 0 auto;
-}
-
 .deckOfCards img,
 .three img,
 .threeCardsImg,
@@ -395,5 +375,28 @@ button:active {
 .single img {
   -webkit-animation-duration: .5s;
           animation-duration: .5s;
+}
+
+.cardDescription, .cardDescription3 {
+  background: #3e4149;
+  padding: 1rem;
+  margin: 0 auto;
+  height: 100px;
+  width: 200px;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.cardDescription h3, .cardDescription3 h3 {
+  margin: 0 auto;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cardDescription p, .cardDescription3 p {
+  margin: 0 auto;
+  text-align: left;
 }
 /*# sourceMappingURL=style.css.map */

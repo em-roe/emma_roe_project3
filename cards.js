@@ -375,6 +375,7 @@ app.selectCard = function (){
     $('.cardDescription p').text(randomCard.desc)
 
     $('.cardDescription').removeClass('hide')
+    $('.cardDescription3').addClass('hide')
 
     $('.cardDescription p').text(randomCard.desc)
     $('.faceDown').addClass('hide')
@@ -385,24 +386,31 @@ app.selectThree = function () {
     $('#selectThree').on('click', function () {
         app.reset();
         const randomCard = app.getRandomCard(tarotCards);   
-        $('.cardDescription').removeClass('hide')
-        $('.cardDescription p').text(randomCard.desc)
+        $('.cardDescription3').removeClass('hide')
+        $('.cardDescription').addClass('hide')
+
         $('.faceDown').addClass('hide')
         // instead of calling getRandomCard three times, we could make a copy of the tarotCards array, shuffle it (using the google strategies), and then take the first three items and send them to a "final" array 
         // underscore library has a shuffle method 
         app.threeCards = []; 
+        app.threeCardsDesc = [];
+
         for (i = 1; i < 4; i++){
             app.randomCard = app.getRandomCard(tarotCards);
             app.threeCards.push(app.randomCard.name);
+            app.threeCardsDesc.push(app.randomCard.desc);
         }
+        
         app.threeCards.forEach(function(item) {
             console.log(item);
             const cardnameReplaced = item.replace(/([A-Z])/g, ' $1');
             $('.three').append(`<img src="assets/${item}.jpg" alt="alt" class="threeCardsImg">`);
-            $('.cardDescription').append(`<h3>${cardnameReplaced}</h3`)
             $('.three img').addClass('animated slideInUp').one('animationend', function () {
                 $(this).removeClass('animated slideInUp')
             });
+            $('.cardDescription3').append(`<h3>${cardnameReplaced}</h3`);
+            $('.cardDescription3').append(`<p>${randomCard.desc}</p>`);
+
 
         });
 
