@@ -347,13 +347,10 @@ app.shuffleCards = function () {
     $('#shuffleCards').on('click', function () {  
         app.reset();
         $('.deckOfCards img').attr("src", `assets/cardback.svg`);
-
         $('.deckOfCards img').addClass('animated flipInY').one('animationend', function () {
             $(this).removeClass('animated flipInY')
         });
-
         $('.cardDescription').addClass('hide') 
-
     })
 } // ends the shuffleCards function 
 
