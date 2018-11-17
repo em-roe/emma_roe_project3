@@ -6,27 +6,30 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title> LE lil TAROT </title>
 <link rel='icon' href="favicon.ico" type='icon'/>
-<link href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900 | Asap" rel="stylesheet">
-<link rel="stylesheet" href="styles/animate.css">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Pacifico|Playfair+Display" rel="stylesheet">
 <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <div class="wrapper">
     <header>
-        <h1>*~Welcome to le Magic Tarot *~</h1>
+        <!-- <img src="./assets/noun_Star_1661695.svg" alt=""> -->
+        <h1>magic tarot </h1>
+        <h2>a daily prompt for to guide your focus</h2>
     </header>
     <main>
         <div class="welcome">
-            <h4>the magic of tarot will guide you towards a resolution to your thoughts and desires. to begin, please enter a question, topic about which you request guidance.</h4>
-            <form>
+            <h4>the magic of tarot will guide you towards a resolution to your thoughts and desires. to begin, please enter a question, topic about which you request guidance.
+                to begin, your focus today should be.... 
+            </h4>
+            <!-- <form>
                 <label class="visuallyhidden" for="question">your question</label>
                 <input id="question" class="input" type="text" name="question" placeholder="Guidance?">
                 <button class="askQuestion">ask the fates</button>
-            </form>
+            </form> -->
         </div>
         <div class="buttons">
             <button id="shuffleCards">Shuffle</button>
-            <button id="selectCard">Single Card Spread</button>
+            <button id="selectCard">Single Card</button>
             <button id="selectThree">3 Card Spread</button>
         </div>    
 
@@ -34,11 +37,16 @@
             <div class="deckOfCards">
                 <img src="assets/cardback.svg" alt="">
             </div>
+
+            <div class="faceUp single">
+                <img src="" alt="">
+            </div>
+
             <div class="faceUp three"> 
             </div>
         </div>
         
-        <div class="cardDescription single hide"> 
+        <div class="cardDescription singleCard hide"> 
             <h3></h3> <!-- title of the returned card-->
             <p></p><!-- description of the returned card-->
         </div> <!-- /.cardDescription-->
@@ -52,7 +60,9 @@
     </main>
 </div> <!-- /.wrapper-->
 <footer>
-
+    <p>
+        made with love by em
+    </p>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 <script src="cards.js"></script>

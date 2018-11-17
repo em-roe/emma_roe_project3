@@ -347,7 +347,7 @@ app.shuffleCards = function () {
     $('#shuffleCards').on('click', function () {  
         app.reset();
         $('.deckOfCards img').attr("src", `assets/cardback.svg`);
-        $('.deckOfCards img').addClass('animated flipInY').one('animationend', function () {
+        $('.deckOfCards img').addClass('animated pulse').one('animationend', function () {
             $(this).removeClass('animated flipInY')
         });
         $('.cardDescription').addClass('hide') 
@@ -363,9 +363,10 @@ app.selectCard = function (){
     $('#selectCard').on('click', function(clickEvent){
     app.reset();
     const randomCard = app.getRandomCard(tarotCards);
-    // console.log(randomCard);
        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
-    $('.deckOfCards img').attr("src",`assets/${randomCard.name}.jpg`);
+    // $('.deckOfCards img').attr("src",`assets/${randomCard.name}.jpg`);
+    $('.single img').attr("src",`assets/${randomCard.name}.jpg`);
+
     $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
     $('.cardDescription p').text(randomCard.desc)
 
@@ -379,36 +380,32 @@ app.selectCard = function (){
 app.selectThree = function () {
     $('#selectThree').on('click', function () {
         app.reset();
-        const randomCard = app.getRandomCard(tarotCards);
-        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); 
-        // $('.faceUp img').attr("src", `assets/${randomCard.name}.jpg`);
-        // $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
-        // $('.cardDescription p').text(randomCard.desc)
-
+        const randomCard = app.getRandomCard(tarotCards);   
         $('.cardDescription').removeClass('hide')
-
         $('.cardDescription p').text(randomCard.desc)
         $('.faceDown').addClass('hide')
-        $('.three')
-
-        app.threeCards = [];
-        
+        // instead of calling getRandomCard three times, we could make a copy of the tarotCards array, shuffle it (using the google strategies), and then take the first three items and send them to a "final" array 
+        // underscore library has a shuffle method 
+        app.threeCards = []; 
         for (i = 1; i < 4; i++){
             app.randomCard = app.getRandomCard(tarotCards);
             app.threeCards.push(app.randomCard.name);
-            console.log(app.threeCards)
         }
-
         app.threeCards.forEach(function(item) {
+            console.log(item);
+            const cardnameReplaced = item.replace(/([A-Z])/g, ' $1');
             $('.three').append(`<img src="assets/${item}.jpg" alt="alt" class="threeCardsImg">`);
+            $('.cardDescription').append(`<h3>${cardnameReplaced}</h3`)
         });
 
-    }) // ends the selectCard function
+    }) // end of selectCard function
 
     app.reset = function(){
         $('.threeCardsImg').remove()
         app.threeCards = [];
-        console.log("reset success", app.threeCards);
+        $('.single img').attr("src", ``);
+
+
     }
 
 } // ends the app.selectcard
