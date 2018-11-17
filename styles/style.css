@@ -204,31 +204,39 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: #230b3b;
+}
+
+main, header, footer {
+  background: #230b3b;
 }
 
 header {
   text-align: center;
-  background: #c3bbcc;
-  color: #3e4149;
   margin: 0 auto;
+  border-radius: 18px;
 }
 
 header h1 {
+  color: #c3bbcc;
   margin: 0 auto;
-  padding: 0 3rem;
-  text-transform: uppercase;
-  font-family: 'Pacifico', cursive;
-  font-size: 3rem;
+  padding: 0 0rem;
+  text-transform: capitalize;
+  font-family: 'Lobster', cursive;
+  font-size: 8rem;
   font-weight: bold;
+  text-shadow: 4px 4px #3e4149;
+}
+
+h2 {
+  margin: 0 auto;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 h4 {
   font-family: 'Muli', sans-serif;
   color: #e5dada;
-}
-
-.welcome {
-  background: rgba(62, 65, 73, 0.5);
 }
 
 input {
@@ -248,11 +256,10 @@ input {
 
 .cardDescription {
   background: #3e4149;
-  padding: 2rem;
+  padding: 1rem;
   margin: 0;
-  height: 200px;
-  width: 200px;
-  border-radius: 13%;
+  height: 100px;
+  width: 100px;
   position: absolute;
   top: 0;
   right: 0;
@@ -306,49 +313,87 @@ input {
   display: none;
 }
 
+footer p {
+  margin: 0 auto;
+  padding: 0;
+}
+
 .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding-bottom: 3rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 1rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 button {
-  display: inline-block;
-  border: 1px solid black;
-  border-radius: 15px;
+  display: block;
+  border: 2px solid #3e4149;
+  border-radius: 5px;
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
-  background: rgba(150, 150, 150, 0.15);
+  background: #230b3b;
   color: #fca311;
-  font-family: 'Slabo 27px', serif;
-  font-size: 2.5rem;
-  letter-spacing: .5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
   text-align: center;
   text-transform: uppercase;
-  -webkit-transition: background 250ms ease-in-out,  -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out,  -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out,  transform 150ms ease;
-  transition: background 250ms ease-in-out,  transform 150ms ease,  -webkit-transform 150ms ease;
+  -webkit-transition: background 300ms ease-in-out,  all 300ms ease-in-out,  -webkit-transform 150ms ease;
+  transition: background 300ms ease-in-out,  all 300ms ease-in-out,  -webkit-transform 150ms ease;
+  transition: background 300ms ease-in-out,  transform 150ms ease,  all 300ms ease-in-out;
+  transition: background 300ms ease-in-out,  transform 150ms ease,  all 300ms ease-in-out,  -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -webkit-box-shadow: 5px 5px 0px #3e4149;
+          box-shadow: 5px 5px 0px #3e4149;
 }
 
 button:hover,
 button:focus {
-  background: #e6af56;
+  background: #fca311;
+  color: #3e4149;
+  border: 2px solid #fca311;
+  -webkit-box-shadow: 0px 0px;
+          box-shadow: 0px 0px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 button:focus {
   outline: 1px solid #fff;
-  outline-offset: -4px;
 }
 
 button:active {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
+}
+
+.grow {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.deckOfCards img {
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+}
+
+.three img,
+.single img {
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
 }
 /*# sourceMappingURL=style.css.map */

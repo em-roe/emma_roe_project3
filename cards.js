@@ -347,8 +347,8 @@ app.shuffleCards = function () {
     $('#shuffleCards').on('click', function () {  
         app.reset();
         $('.deckOfCards img').attr("src", `assets/cardback.svg`);
-        $('.deckOfCards img').addClass('animated pulse').one('animationend', function () {
-            $(this).removeClass('animated flipInY')
+        $('.deckOfCards img').addClass('animated flip').one('animationend', function () {
+            $(this).removeClass('animated flip')
         });
         $('.cardDescription').addClass('hide') 
     })
@@ -366,6 +366,10 @@ app.selectCard = function (){
        const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
     // $('.deckOfCards img').attr("src",`assets/${randomCard.name}.jpg`);
     $('.single img').attr("src",`assets/${randomCard.name}.jpg`);
+    $('.single img').addClass('animated slideInUp').one('animationend', function () {
+            $(this).removeClass('animated slideInUp')
+    });
+    
 
     $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
     $('.cardDescription p').text(randomCard.desc)
@@ -396,6 +400,10 @@ app.selectThree = function () {
             const cardnameReplaced = item.replace(/([A-Z])/g, ' $1');
             $('.three').append(`<img src="assets/${item}.jpg" alt="alt" class="threeCardsImg">`);
             $('.cardDescription').append(`<h3>${cardnameReplaced}</h3`)
+            $('.three img').addClass('animated slideInUp').one('animationend', function () {
+                $(this).removeClass('animated slideInUp')
+            });
+
         });
 
     }) // end of selectCard function

@@ -6,24 +6,34 @@
     width: 80%;
     display: flex;
     flex-direction: column;
+    background: $mainDark;
 }
 
+main, header, footer {
+    background: $mainDark;
+}
 
 header {
     text-align: center;
-    background: #c3bbcc;
-    color: #3e4149;
     margin: 0 auto;
+    border-radius: 18px;
 
     h1 {
+        color: #c3bbcc;
         margin: 0 auto; 
-        padding: 0 3rem; 
-        text-transform: uppercase;
-        font-family: 'Pacifico', cursive;
-        font-size: 3rem;
+        padding: 0 0rem; 
+        text-transform: capitalize;
+        font-family: 'Lobster', cursive;
+        font-size: 8rem;
         font-weight: bold;
+        text-shadow: 4px 4px #3e4149;
     }
+}
 
+h2 {
+    margin: 0 auto;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 h4 {
@@ -31,9 +41,6 @@ h4 {
     color: #e5dada;
 }
 
-.welcome {
-    background: rgba(62,65,73, .5);
-}
 
 input {
     margin: 0 auto;
@@ -42,21 +49,19 @@ input {
     padding: 1rem 2rem;
 }
 
-
-
 .cardArea {
     position: relative;
     margin: 0 auto;
     display: flex;
+    // padding: 5rem;
 }
  
 .cardDescription {
     background: #3e4149;
-    padding: 2rem;
+    padding: 1rem;
     margin: 0;
-    height: 200px;
-    width: 200px;
-    border-radius: 13%;
+    height: 100px;
+    width: 100px;
     position: absolute; 
     top: 0; 
     right: 0;
@@ -71,9 +76,6 @@ input {
     }
 }
 
-.deckOfCards {
-    
-}
 
 .deckOfCards img, 
 .three img,
@@ -112,10 +114,13 @@ input {
                 8px 8px 0 0px #FCA311,
                 9px 9px 1px 0px rgba(0,0,0,0.15),
                 10px 10px 0 0px #FCA311;
-}
-
-
+} 
 
 .hide {
     display: none;
+}
+
+footer p {
+    margin: 0 auto; 
+    padding: 0;
 }
