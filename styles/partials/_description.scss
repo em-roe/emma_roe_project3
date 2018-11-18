@@ -1,3 +1,5 @@
+
+
 .cardDescription, .cardDescription3 {
     background: $secondary;
     color: $mainGrey;
@@ -12,7 +14,6 @@
     h3 {
         margin: 0 auto;
         text-transform: uppercase;  
-        text-align: center;
         font-family: 'Bree Serif', serif;        
         font-size: 2rem;
         padding-bottom: 1rem;
@@ -22,6 +23,9 @@
         margin: 0 auto;
         text-align: left;
         padding-bottom: 2rem;
+        text-transform: lowercase;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.5rem;
     }
 }
 

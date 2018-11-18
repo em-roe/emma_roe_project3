@@ -320,19 +320,12 @@ app.init = function (){
     app.selectCard();
     app.selectThree();
     app.shuffleCards();
-    app.enterQuestion();
 }
 
 $(function () { // start document ready 
     app.init();
-
 }); // end of document ready 
 
-app.enterQuestion = function(){
-    $('.askQuestion').on('click', function (e) {
-        e.preventDefault(); 
-    });
-}
 
 app.shuffleCards = function () {
     $('#shuffleCards').on('click', function () {  
@@ -361,6 +354,8 @@ app.selectCard = function (){
             $(this).removeClass('animated slideInUp')
     });
     
+    const cardMoreInfo = randomCard.name.replace(/([A-Z])/g, '-$1'); 
+     console.log(cardMoreInfo)
 
         $('.cardDescription h3').text(`★ ${cardnameReplaced}`) // adding .text will add it as text, rather than as html
     $('.cardDescription p').text(randomCard.desc)
@@ -400,7 +395,7 @@ app.selectThree = function () {
                 $(this).removeClass('animated slideInUp')
             });
             $('.cardDescription3').append(`<h3>★ ${cardnameReplaced}</h3`);
-            $('.cardDescription3').append(`<p>${randomCard.desc}</p>`);
+            $('.cardDescription3').append(`<p></p>`);
 
 
         });
