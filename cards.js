@@ -1,324 +1,315 @@
 const tarotCards = [ 
     {
     name: "theMagician", 
-    desc: "description goes here",
+        desc: " Confident, Creative,  Important communications, Skillful, Talented, proficient",
     },
     {
     name: "theHighPriestess",
-    desc: "description goes here",
+        desc: "Feminine influences, Insightful, Mystery, Understanding, Wisdom ",
     },
     {
     name: "theEmpress",
-    desc: "description goes here",
+        desc: "Abundant creativity, Fertility, Fulfillment, Mother figure, Productivity",
     },
     {
     name: "theEmperor",
-    desc: "description goes here",
+        desc: "Authority, Father figure, Masculine influence, Rational, Stable ",
     },
     {
     name: "theHierophant",
-    desc: "description goes here",
+        desc: "Approval, Conformity, Consent, Good advice, Marriage or Union",
     },
     {
     name: "theLovers",
-    desc: "description goes here",
+        desc: "Attachment or combination, Conflicting choices, Partners, Relationships, Union",
     },
     {
     name: "theChariot",
-    desc: "description goes here",
+        desc: " Journey, Progression, Strong character, Success from effort, Transportation and movement",
     },
     {
     name: "strength",
-    desc: "description goes here",
+        desc: "Energy, Facing problems, Strengh, Vitality, Willpower",
     },
     {
     name: "theHermit",
-    desc: "description goes here",
+        desc: "Detachment, Guidance, Solitude, Sour-searching and introspection, Thinking and reflection",
     },
     {
     name: "wheelOfFortune",
-    desc: "description goes here",
+        desc: "Change, Destiny, Good luck, Life cycles, New direction",
     },
     {
     name: "justice",
-    desc: "description goes here",
+        desc: "Balance, Equality, Fairness, Justice, Law and legal matters",
     },
     {
     name: "theHangedMan",
-    desc: "description goes here",
+        desc: "A period of transition, Gaining for a sacrifice, Suspending, Restricting, Discontinued",
     },
     {
     name: "death",
-    desc: "description goes here",
+        desc: "End, New beginning, Loss, Dramatic change, Destruction",
     },
     {
     name: "temperance",
-    desc: "description goes here",
+        desc: "Capable, Control, Harmony and balance, Moderation, Self-confidence",
     },
     {
     name: "theDevil",
-    title: "The Devil",
-    desc: "description goes here",
+        desc: "Anger, Jealousy and resentment, Self-delusion, Selfishness, Violence",
     },
     {
     name: "theTower",
-    desc: "description goes here",
+        desc: "Destruction, Dramatic change, Loss and ruin, New start, Unexpected events",
     },
     {
     name: "theStar",
-    desc: "description goes here",
+        desc: "Calm and serenity, Destiny, Hope, Opportunity, Renewal",
     },
     {
     name: "theMoon",
-    title: "The Moon",
-    desc: "description goes here",
+        desc: "Be careful, Caution, Confusion, Delusion, Risk",
     },
     {
     name: "theSun",
-    desc: "description goes here",
+        desc: "Abundance, Achievement, Joy, Productivity, Success",
     },
     {
     name: "judgement",
-    desc: "description goes here",
+        desc: "Change, Decisions, Success, Transformation, Upheaval",
     },
     {
     name: "theFool",
-    desc: "description goes here",
+        desc: "Carefree, Foolish, Important decisions, New beginnings, Optimistic",
     },
     {
     name: "theWorld",
-    desc: "description goes here",
+        desc: "Certainty, Completion, Positive, Reward, Satisfaction",
     }, 
     {
     name: "aceOfWands",
-    desc: "description goes here",
+        desc: "Birth, Commencement, Creativity, Inventiveness, New Beginnings",
     },
     {
     name: "twoOfWands",
-    desc: "description goes here",
+        desc: "Achievement, Anxiety, Gain, Goals, Partnership",
     },
     {
     name: "threeOfWands",
-    desc: "description goes here",
+        desc: "Achievement, Fresh starts, Long-term success, Partnerships, Trade",
     },
     {
     name: "fourOfWands",
-    desc: "description goes here",
+        desc: "Celebrations and happiness, Completion, Harmony, New beginnings, Pleasure",
     },
     {
     name: "fiveOfWands",
-    desc: "description goes here",
+        desc: "Anxiety, Conflict, Disagreement, Strife, Struggle",
     },
     {
     name: "sixOfWands",
-    desc: "description goes here",
+        desc: "Completion, Good news, Reward and Recognition, Success, Triumph",
     },
     {
     name: "sevenOfWands",
-    desc: "description goes here",
+        desc: "Coping and Resistance, Courage, Long-term successes, Perseverance, Strength",
     },
     {
     name: "eightOfWands",
-    desc: "description goes here",
+        desc: "Hasty actions, Journey and Travel, A Journey or Flight, Motion, End to a delay",
     },
     {
     name: "nineOfWands",
-    desc: "description goes here",
+        desc: "Afraid, Cautious, Defensive, Impermanent Security, Inner strength",
     },
     {
     name: "tenOfWands",
-    desc: "description goes here",
+        desc: "Burdens, Challenges, Intense pressure, Oppression, Overcommitment",
     },
     {
     name: "pageOfWands",
-    desc: "description goes here",
+        desc: "Adventurous, Ambitious, Energetic and Active, New beginnings, Skilled",
     },
     {
     name: "knightOfWands",
-    title: "",
-    desc: "description goes here",
+        desc: "Challenging, Determination, Foreign travel, Leader, Unpredictability",
     },
     {
     name: "queenOfWands",
-    desc: "description goes here",
+        desc: "Career-oriented, Hard worker, Honest, Independent and home-loving, Thoughtful",
     },
     {
     name: "kingOfWands",
-    desc: "description goes here",
+        desc: "Authority figure, Financial gain, Honest and trustworthy, Mediation, Professional",
     },
     {
     name: "aceOfCups",
-    desc: "description goes here",
-    },
-    {
-    name: "aceOfCups",
-    desc: "description goes here",
+        desc: "Abundance, Creativity, Intense relationship, Satisfaction, Success",
     },
     {
     name: "twoOfCups",
-    desc: "description goes here",
+        desc: "Commitment, Friendship, Love, Partnership, Relationship",
     },
     {
     name: "threeOfCups",
-    desc: "description goes here",
+        desc: "Abundance, Celebration, Creativity, Entertainment, Gathering",
     },
     {
     name: "fourOfCups",
-    desc: "description goes here",
+        desc: "Boredom, Disappointment, Dissatisfaction, Re-evaluation, Tedious",
     },
     {
     name: "fiveOfCups",
-    desc: "description goes here",
+        desc: "Avoidance, Detachment, Loss, New hope, Regret",
     },
     {
     name: "sixOfCups",
-    desc: "description goes here",
+        desc: "Apology, Past associations, Reconciliation, Reminiscent, Return",
     },
     {
     name: "sevenOfCups",
-    desc: "description goes here",
+        desc: "Confusion, Dreams and ambitions, Speculating, Decision, Temptation",
     },
     {
     name: "eightOfCups",
-    desc: "description goes here",
+        desc: "Abandonment, Avoiding, Changes in lifestyle, Leaving / Going, Personal development",
     },
     {
     name: "nineOfCups",
-    desc: "description goes here",
+        desc: "Complete, Fulfilled, Generous, Pleasure, Satisfaction",
     },
     {
     name: "tenOfCups",
-    desc: "description goes here",
+        desc: "Abundance, Achievement, Commitment, Family, Happiness",
     },
     {
     name: "pageOfCups",
-    desc: "description goes here",
+        desc: "Announcement, Birth, Creative ideas, Good news, Message",
     },
     {
     name: "knightOfCups",
-    desc: "description goes here",
+        desc: "Arrival, Creative, Invitation, New opportunities, Proposal",
     },
     {
     name: "queenOfCups",
-    desc: "description goes here",
+        desc: "Intuitive, Mature, Sensitive Woman, Spouse, Virtuous, Wise",
     },
     {
     name: "kingOfCups",
-    desc: "description goes here",
+        desc: "Compassionate, Good advice / Helpful, Integrity, Mature, Authoritative Man, Spouse",
     },
     {
     name: "aceOfSwords",
-    desc: "description goes here",
+        desc: "Achievement, Advantage, Advantage, Mental focus, Victory",
     },
     {
     name: "twoOfSwords",
-    desc: "description goes here",
+        desc: "Balance, Conflict resolution, Decisions, Peace of mind, Prejudice",
     },
     {
     name: "threeOfSwords",
-    desc: "description goes here",
+        desc: "Fresh beginning, Loss, Pain, Separation, Suffering",
     },
     {
     name: "fourOfSwords",
-    title: "",
-    desc: "description goes here",
+        desc: "Delays, Healing, Rest, Sickness, Withdrawal",
     },
     {
     name: "fiveOfSwords",
-    desc: "description goes here",
+        desc: "Conflict, Defeat, Loss, Low self-esteem, Separation",
     },
     {
     name: "sixOfSwords",
-    desc: "description goes here",
+        desc: "A journey, Better future, Escape, Left over challenges, Travel",
     },
     {
     name: "sevenOfSwords",
-    desc: "description goes here",
+        desc: "Avoiding confrontation, Failure, Incomplete, Theft, Unknown opponents",
     },
     {
     name: "eightOfSwords",
-    desc: "description goes here",
+        desc: "Constraint, Disillusioned, Frustration, Obstacles, Restrictions",
     },
     {
     name: "nineOfSwords",
-    desc: "description goes here",
+        desc: "Accidents, Paranoia, Depression, Grief, Mental anguish",
     },
     {
     name: "tenOfSwords",
-    desc: "description goes here",
+        desc: "End, Failure, Mortality, New hope, Ruin",
     },
     {
     name: "pageOfSwords",
-    desc: "description goes here",
+        desc: "Aggressive, Challenging, Change, Intelligent, Vigilant",
     },
     {
     name: "knightOfSwords",
-    desc: "description goes here",
+        desc: "Conflict, Destruction, Domineering, Loss, Unexpected",
     },
     {
     name: "queenOfSwords",
-    desc: "description goes here",
+        desc: "A mature, perceptive woman, Independent, Loss, Pain, Separation",
     },
     {
     name: "kingOfSwords",
-    desc: "description goes here",
+        desc: " Mature, authoritative man, Assertive, Authority, Government / Legal, Leadership",
     },
     {
     name: "aceOfPentacles",
-    desc: "description goes here",
+        desc: "Emotional stability, Financial gain, Luck, Recognition, Success",
     },
     {
     name: "twoOfPentacles",
-    desc: "description goes here",
+        desc: "Balance, Fluctuating Wealth, Juggling, Prudence, Transfer or Exchange",
     },
     {
     name: "threeOfPentacles",
-    title: "",
-    desc: "description goes here",
+        desc: "Excellence, Mastery, Satisfaction, Success, Teamwork",
     },
     {
     name: "fourOfPentacles",
-    desc: "description goes here",
+        desc: "Certainty, Possessive, Reliable, Security, Tenacity",
     },
     {
     name: "fiveOfPentacles",
-    desc: "description goes here",
+        desc: "Emotional or Financial troubles, Inadequacy, Poverty, Scarcity, Worry",
     },
     {
     name: "sixOfPentacles",
-    desc: "description goes here",
+        desc: "Distribution, Donation, Favour, Prosperity, Solvency",
     },
     {
     name: "sevenOfPentacles",
-    desc: "description goes here",
+        desc: "Business & Trade, Long-term success, Occupation, Perseverance, Wealth",
     },
     {
     name: "eightOfPentacles",
-    desc: "description goes here",
+        desc: "Apprentice, Career, Craftsmanship, New skills, Prudence",
     },
     {
     name: "nineOfPentacles",
-    desc: "description goes here",
+        desc: "Abundance, Financial security, Opulence, Prosperous, Wealth",
     },
     {
     name: "tenOfPentacles",
-    desc: "description goes here",
+        desc: "Close relationships, Family, Fortune, Inheritance, Prosperous",
     },
     {
     name: "pageOfPentacles",
-    desc: "description goes here",
+        desc: "Attentive, Motivated, Scholarship, Skillful, Studious",
     },
     {
     name: "knightOfPentacles",
-    desc: "description goes here",
+        desc: "Ambitious, Dependable, Faithful, Honourable, Thorough",
     },
     {
     name: "queenOfPentacles",
-    desc: "description goes here",
+        desc: "Abundance, Financial help, Practicality, Prosperity, Wealth",
     },
     {
     name: "kingOfPentacles",
-    desc: "description goes here",
+        desc: "Confident, Reliable, Security, Success, Wealth",
     },
 
 ] // end of tarotCards 
@@ -371,7 +362,7 @@ app.selectCard = function (){
     });
     
 
-    $('.cardDescription h3').text(cardnameReplaced) // adding .text will add it as text, rather than as html
+        $('.cardDescription h3').text(`★ ${cardnameReplaced}`) // adding .text will add it as text, rather than as html
     $('.cardDescription p').text(randomCard.desc)
 
     $('.cardDescription').removeClass('hide')
@@ -408,7 +399,7 @@ app.selectThree = function () {
             $('.three img').addClass('animated slideInUp').one('animationend', function () {
                 $(this).removeClass('animated slideInUp')
             });
-            $('.cardDescription3').append(`<h3>${cardnameReplaced}</h3`);
+            $('.cardDescription3').append(`<h3>★ ${cardnameReplaced}</h3`);
             $('.cardDescription3').append(`<p>${randomCard.desc}</p>`);
 
 

@@ -1,9 +1,9 @@
 .cardDescription, .cardDescription3 {
-    background: #3e4149;
+    background: $secondary;
+    color: $mainGrey;
     padding: 1rem;
     margin: 0 auto;
-    height: 100px;
-    width: 200px;
+    width: 250px;
     border-radius: 20px;
     position: absolute; 
     top: 0; 
@@ -13,12 +13,15 @@
         margin: 0 auto;
         text-transform: uppercase;  
         text-align: center;
-
+        font-family: 'Bree Serif', serif;        
+        font-size: 2rem;
+        padding-bottom: 1rem;
     }
 
     p {
         margin: 0 auto;
         text-align: left;
+        padding-bottom: 2rem;
     }
 }
 

@@ -230,13 +230,11 @@ header h1 {
 
 h2 {
   margin: 0 auto;
-  margin-bottom: 5px;
   text-align: center;
-}
-
-h4 {
-  font-family: 'Muli', sans-serif;
+  padding-bottom: 1rem;
+  font-family: 'Lato', sans-serif;
   color: #e5dada;
+  font-size: 1.4rem;
 }
 
 input {
@@ -377,12 +375,22 @@ button:active {
           animation-duration: .5s;
 }
 
+.three img:nth-child(2) {
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+.three img:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
 .cardDescription, .cardDescription3 {
-  background: #3e4149;
+  background: #c3bbcc;
+  color: #3e4149;
   padding: 1rem;
   margin: 0 auto;
-  height: 100px;
-  width: 200px;
+  width: 250px;
   border-radius: 20px;
   position: absolute;
   top: 0;
@@ -393,10 +401,14 @@ button:active {
   margin: 0 auto;
   text-transform: uppercase;
   text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 2rem;
+  padding-bottom: 1rem;
 }
 
 .cardDescription p, .cardDescription3 p {
   margin: 0 auto;
   text-align: left;
+  padding-bottom: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
