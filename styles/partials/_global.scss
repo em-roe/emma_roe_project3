@@ -2,7 +2,6 @@
 .wrapper {
     margin: 0 auto; 
     max-width: 1280px;
-    height: 100vh;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -39,44 +38,32 @@ h2 {
     font-size: 1.4rem;
 }
 
-
-
-
-input {
-    margin: 0 auto;
-    background: rgb(62,65,73);
-    border: 0px; 
-    padding: 1rem 2rem;
-}
-
 .cardArea {
+    // border: 2px solid lightgreen;
     position: relative;
     margin: 0 auto;
     display: flex;
-    // padding: 5rem;
+    padding: 0 10rem;
 }
  
-
-
 .deckOfCards img, 
-.three img,
-.threeCardsImg, 
+.triple img,
 .single img {
     border-radius: 50px;
-    width: 80%;
+    width: 70%;
 }
+
 
 .single {
-    position: absolute; 
-    left: 0;
+    z-index: 10;
+    position: absolute;
 }
 
-.three {
+.triple {
     display: flex;
     flex-direction: row;
     position: absolute; 
-    left: 0;
-    width: 75%;
+    width: 65%;
 
     img:nth-child(n+2) {
         margin-left: 20px;
@@ -84,18 +71,18 @@ input {
 }
 
 
-.deckOfCards img { // these are the box shadows for the "deck" of cards styling
-    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.15),
-                2px 2px 0 0px #FCA311,
-                3px 3px 1px 0px rgba(0,0,0,0.15),
-                4px 4px 0 0px #FCA311,
-                5px 5px 1px 0px rgba(0,0,0,0.15),
-                6px 6px 0 0px #FCA311,
-                7px 7px 1px 0px rgba(0,0,0,0.15),
-                8px 8px 0 0px #FCA311,
-                9px 9px 1px 0px rgba(0,0,0,0.15),
-                10px 10px 0 0px #FCA311;
-} 
+// .deckOfCards img { // these are the box shadows for the "deck" of cards styling
+//     box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.15),
+//                 2px 2px 0 0px #FCA311,
+//                 3px 3px 1px 0px rgba(0,0,0,0.15),
+//                 4px 4px 0 0px #FCA311,
+//                 5px 5px 1px 0px rgba(0,0,0,0.15),
+//                 6px 6px 0 0px #FCA311,
+//                 7px 7px 1px 0px rgba(0,0,0,0.15),
+//                 8px 8px 0 0px #FCA311,
+//                 9px 9px 1px 0px rgba(0,0,0,0.15),
+//                 10px 10px 0 0px #FCA311;
+// } 
 
 .hide {
     display: none;

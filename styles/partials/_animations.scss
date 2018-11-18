@@ -3,14 +3,18 @@
     animation-iteration-count: 2;
 }
 
-.three img, 
+.triple img, 
 .single img {
     animation-duration: .5s;
 }
 
-.three img:nth-child(2){
+.triple img:nth-child(2){
     animation-delay: .5s;
 }
-.three img:nth-child(3){
+.triple img:nth-child(3){
     animation-delay: 1s;
+}
+
+.cardDescription {
+    animation-duration: 3s;
 }

@@ -320,6 +320,7 @@ app.init = function (){
     app.selectCard();
     app.selectThree();
     app.shuffleCards();
+    app.reset();
 }
 
 $(function () { // start document ready 
@@ -327,86 +328,114 @@ $(function () { // start document ready
 }); // end of document ready 
 
 
-app.shuffleCards = function () {
+app.shuffleCards = function () { // this is the animation of the "deck" of cards, and the reset of the descriptions 
     $('#shuffleCards').on('click', function () {  
         app.reset();
         $('.deckOfCards img').attr("src", `assets/cardback.svg`);
         $('.deckOfCards img').addClass('animated flip').one('animationend', function () {
             $(this).removeClass('animated flip')
         });
-        $('.cardDescription').addClass('hide') 
+        $('.cardDescription').addClass('hide')
+        $('.cardDescription3').addClass('hide')  
+        // $('.cardDescription').text('')
+        // $('.cardDescription3').text('')
+        app.shuffle(tarotCards);
     })
+
+
 } // ends the shuffleCards function 
 
-app.getRandomCard = function(listOfCards) {
-    const result = listOfCards[Math.floor((Math.random() * listOfCards.length))];
-    return result;
-}
+// app.getRandomCard = function(listOfCards) {
+//     const result = listOfCards[Math.floor((Math.random() * listOfCards.length))];
+//     return result;
+// }
+
+app.shuffle = function (array) {
+    let currentIndex = array.length;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = array[currentIndex]; // And swap it with the current element.
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+};
+app.shuffle(tarotCards);
+const shuffledTarotCards = app.shuffle(tarotCards.slice());
+app.singleCard = shuffledTarotCards[0]
+app.secondCard = shuffledTarotCards[1]
+app.thirdCard = shuffledTarotCards[2]
+
 
 app.selectCard = function (){ 
     $('#selectCard').on('click', function(clickEvent){
-    app.reset();
-    const randomCard = app.getRandomCard(tarotCards);
-       const cardnameReplaced = randomCard.name.replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
-    // $('.deckOfCards img').attr("src",`assets/${randomCard.name}.jpg`);
-    $('.single img').attr("src",`assets/${randomCard.name}.jpg`);
-    $('.single img').addClass('animated slideInUp').one('animationend', function () {
+        app.reset();
+        // const randomCard = app.getRandomCard(tarotCards);
+        const cardnameReplaced = app.singleCard['name'].replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
+        // $('.deckOfCards img').attr("src",`assets/${randomCard.name}.jpg`);
+        $('.single img').attr("src",`assets/${app.singleCard['name']}.jpg`);
+        $('.single img').addClass('animated slideInUp').one('animationend', function () {
             $(this).removeClass('animated slideInUp')
-    });
-    
-    const cardMoreInfo = randomCard.name.replace(/([A-Z])/g, '-$1'); 
-     console.log(cardMoreInfo)
+        });
+        
+        // this is if i want to link to the more info site, stretch goal: 
+        // const cardMoreInfo = app.singleCard['name'].replace(/([A-Z])/g, '-$1');  
+        //  console.log(cardMoreInfo)
 
         $('.cardDescription h3').text(`★ ${cardnameReplaced}`) // adding .text will add it as text, rather than as html
-    $('.cardDescription p').text(randomCard.desc)
+        $('.cardDescription p').text(app.singleCard['desc'])
+        $('.cardDescription').removeClass('hide')
 
-    $('.cardDescription').removeClass('hide')
-    $('.cardDescription3').addClass('hide')
+        $('.cardDescription').addClass('animated fadeIn').one('animationed', function () {
+            $(this).removeClass('animated fadeIn')
+        });
 
-    $('.cardDescription p').text(randomCard.desc)
-    $('.faceDown').addClass('hide')
+        $('.cardDescription3').addClass('hide')
+        $('.cardDescription p').text(app.singleCard['desc'])
+        $('.faceDown').addClass('hide')
     }) // ends the selectCard function
 } // ends the app.selectcard
 
 app.selectThree = function () {
     $('#selectThree').on('click', function () {
         app.reset();
-        const randomCard = app.getRandomCard(tarotCards);   
-        $('.cardDescription3').removeClass('hide')
-        $('.cardDescription').addClass('hide')
-
-        $('.faceDown').addClass('hide')
-        // instead of calling getRandomCard three times, we could make a copy of the tarotCards array, shuffle it (using the google strategies), and then take the first three items and send them to a "final" array 
-        // underscore library has a shuffle method 
-        app.threeCards = []; 
-        app.threeCardsDesc = [];
-
-        for (i = 1; i < 4; i++){
-            app.randomCard = app.getRandomCard(tarotCards);
-            app.threeCards.push(app.randomCard.name);
-            app.threeCardsDesc.push(app.randomCard.desc);
-        }
         
-        app.threeCards.forEach(function(item) {
-            console.log(item);
-            const cardnameReplaced = item.replace(/([A-Z])/g, ' $1');
-            $('.three').append(`<img src="assets/${item}.jpg" alt="alt" class="threeCardsImg">`);
-            $('.three img').addClass('animated slideInUp').one('animationend', function () {
-                $(this).removeClass('animated slideInUp')
-            });
-            $('.cardDescription3').append(`<h3>★ ${cardnameReplaced}</h3`);
-            $('.cardDescription3').append(`<p></p>`);
+        const cardnameReplaced = app.singleCard['name'].replace(/([A-Z])/g, ' $1'); 
+        const cardnameReplaced2 = app.secondCard['name'].replace(/([A-Z])/g, ' $1'); 
+        const cardnameReplaced3 = app.thirdCard['name'].replace(/([A-Z])/g, ' $1'); 
 
+        $('.triple .one').attr("src", `assets/${app.singleCard['name']}.jpg`);
+        $('.triple .two').attr("src", `assets/${app.secondCard['name']}.jpg`);
+        $('.triple .three').attr("src", `assets/${app.thirdCard['name']}.jpg`);
 
+        $('.triple img').addClass('animated slideInUp').one('animationend', function () {
+            $(this).removeClass('animated slideInUp')
         });
 
-    }) // end of selectCard function
+        $('.cardDescription3').removeClass('hide')
+        $('.cardDescription').addClass('hide')
+        $('.faceDown').addClass('hide')
+
+        $('.cardDescription3 .first').html(`<h3> ★ ${cardnameReplaced} </h3>
+        <p> ${app.singleCard['desc']} </p> `) 
+        $('.cardDescription3 .second').html(`<h3> ★ ${cardnameReplaced2} </h3>
+        <p> ${app.secondCard['desc']} </p> `) 
+        $('.cardDescription3 .third').html(`<h3> ★ ${cardnameReplaced3} </h3>
+        <p> ${app.thirdCard['desc']} </p> `) 
+
+
+        $('.cardDescription3 second').text(`★ ${cardnameReplaced2}`) 
+        $('.cardDescription3 third').text(`★ ${cardnameReplaced3}`) 
+
+        $('.faceDown').addClass('hide') 
+       
+    }) // end of selectThree function
 
     app.reset = function(){
-        $('.threeCardsImg').remove()
-        app.threeCards = [];
         $('.single img').attr("src", ``);
-
+        $('.triple img').attr("src", ``);
 
     }
 

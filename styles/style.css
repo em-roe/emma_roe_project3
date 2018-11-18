@@ -189,13 +189,13 @@ img {
 }
 
 body {
-  background: #230b3b url(../assets/transparentBG.svg);
+  height: 100vh;
+  background: url(../assets/untitled.svg), left repeat;
 }
 
 .wrapper {
   margin: 0 auto;
   max-width: 1280px;
-  height: 100vh;
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -237,35 +237,28 @@ h2 {
   font-size: 1.4rem;
 }
 
-input {
-  margin: 0 auto;
-  background: #3e4149;
-  border: 0px;
-  padding: 1rem 2rem;
-}
-
 .cardArea {
   position: relative;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 10rem;
 }
 
 .deckOfCards img,
-.three img,
-.threeCardsImg,
+.triple img,
 .single img {
   border-radius: 50px;
-  width: 80%;
+  width: 70%;
 }
 
 .single {
+  z-index: 10;
   position: absolute;
-  left: 0;
 }
 
-.three {
+.triple {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,17 +267,11 @@ input {
       -ms-flex-direction: row;
           flex-direction: row;
   position: absolute;
-  left: 0;
-  width: 75%;
+  width: 65%;
 }
 
-.three img:nth-child(n+2) {
+.triple img:nth-child(n+2) {
   margin-left: 20px;
-}
-
-.deckOfCards img {
-  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15), 2px 2px 0 0px #FCA311, 3px 3px 1px 0px rgba(0, 0, 0, 0.15), 4px 4px 0 0px #FCA311, 5px 5px 1px 0px rgba(0, 0, 0, 0.15), 6px 6px 0 0px #FCA311, 7px 7px 1px 0px rgba(0, 0, 0, 0.15), 8px 8px 0 0px #FCA311, 9px 9px 1px 0px rgba(0, 0, 0, 0.15), 10px 10px 0 0px #FCA311;
-          box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15), 2px 2px 0 0px #FCA311, 3px 3px 1px 0px rgba(0, 0, 0, 0.15), 4px 4px 0 0px #FCA311, 5px 5px 1px 0px rgba(0, 0, 0, 0.15), 6px 6px 0 0px #FCA311, 7px 7px 1px 0px rgba(0, 0, 0, 0.15), 8px 8px 0 0px #FCA311, 9px 9px 1px 0px rgba(0, 0, 0, 0.15), 10px 10px 0 0px #FCA311;
 }
 
 .hide {
@@ -369,20 +356,25 @@ button:active {
           animation-iteration-count: 2;
 }
 
-.three img,
+.triple img,
 .single img {
   -webkit-animation-duration: .5s;
           animation-duration: .5s;
 }
 
-.three img:nth-child(2) {
+.triple img:nth-child(2) {
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
 }
 
-.three img:nth-child(3) {
+.triple img:nth-child(3) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.cardDescription {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 
 .cardDescription, .cardDescription3 {
@@ -390,11 +382,9 @@ button:active {
   color: #3e4149;
   padding: 1rem;
   margin: 0 auto;
-  width: 250px;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
   border-radius: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .cardDescription h3, .cardDescription3 h3 {
