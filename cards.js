@@ -377,9 +377,7 @@ app.selectCard = function (){
         // const randomCard = app.getRandomCard(tarotCards);
         app.shuffle(tarotCards);
         app.shuffledTarotCards = app.shuffle(tarotCards.slice());
-        
         app.singleCard = app.shuffledTarotCards[0]
-        
         const cardnameReplaced = app.singleCard['name'].replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
 
 
