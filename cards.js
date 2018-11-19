@@ -384,9 +384,11 @@ app.selectCard = function (){
             $(this).removeClass('animated slideInUp')
         });
         
-        // this is if i want to link to the more info site, stretch goal: 
-        // const cardMoreInfo = app.singleCard['name'].replace(/([A-Z])/g, '-$1');  
-        //  console.log(cardMoreInfo)
+        //this is if i want to link to the more info site, stretch goal:
+        const cardMoreInfo = app.singleCard['name'].replace(/([A-Z])/g, '-$1'); 
+        const  url = cardMoreInfo.toLowerCase()
+        //console.log(`https://www.trustedtarot.com/cards/${url}/#meaning`)
+ 
 
         $('.cardDescription h3').text(`★ ${cardnameReplaced}`) // adding .text will add it as text, rather than as html
         $('.cardDescription p').text(app.singleCard['desc'])
@@ -438,8 +440,15 @@ app.selectThree = function () {
         <p> ${app.thirdCard['desc']} </p> `) 
 
 
-        $('.cardDescription3 second').text(`★ ${cardnameReplaced2}`) 
-        $('.cardDescription3 third').text(`★ ${cardnameReplaced3}`) 
+   
+        //this is if i want to link to the more info site, stretch goal:
+        // const cardMoreInfo = app.singleCard['name'].replace(/([A-Z])/g, '-$1');
+        // const url = cardMoreInfo.toLowerCase()
+        // const url2 = cardMoreInfo.toLowerCase()
+        // const url3 = cardMoreInfo.toLowerCase()
+
+        //console.log(`https://www.trustedtarot.com/cards/${url}/#meaning`)
+
 
         $('.faceDown').addClass('hide') 
        
