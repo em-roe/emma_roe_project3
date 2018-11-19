@@ -35,7 +35,7 @@ h2 {
     padding-bottom: 1rem;
     font-family: 'Lato', sans-serif;
     color: $mainLight;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .cardArea {
@@ -65,7 +65,7 @@ h2 {
     width: 75%;
 
     img:nth-child(n+2) {
-        padding-left: 20px;
+        margin-left: 35px;
     }
 }
 
@@ -102,4 +102,5 @@ h2 {
 footer p {
     margin: 0 auto; 
     padding: 0;
+    color: #c3bbcc;
 }
