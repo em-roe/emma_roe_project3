@@ -331,14 +331,12 @@ $(function () { // start document ready
 app.shuffleCards = function () { // this is the animation of the "deck" of cards, and the reset of the descriptions 
     $('#shuffleCards').on('click', function () {  
         app.reset();
-        $('.deckOfCards img').attr("src", `assets/cardback.svg`);
+        $('.deckOfCards img').attr("src", "assets/cardBack.svg");
         $('.deckOfCards img').addClass('animated flip').one('animationend', function () {
             $(this).removeClass('animated flip')
         });
         $('.cardDescription').addClass('hide')
         $('.cardDescription3').addClass('hide')  
-        // $('.cardDescription').text('')
-        // $('.cardDescription3').text('')
         app.shuffle(tarotCards);
     })
 
