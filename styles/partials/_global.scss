@@ -39,11 +39,10 @@ h2 {
 }
 
 .cardArea {
-    // border: 2px solid lightgreen;
     position: relative;
     margin: 0 auto;
     display: flex;
-    padding: 0 10rem;
+    padding: 2rem 10rem 5rem 10rem;
 }
  
 .deckOfCards img, 
@@ -71,18 +70,18 @@ h2 {
 }
 
 
-// .deckOfCards img { // these are the box shadows for the "deck" of cards styling
-//     box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.15),
-//                 2px 2px 0 0px #FCA311,
-//                 3px 3px 1px 0px rgba(0,0,0,0.15),
-//                 4px 4px 0 0px #FCA311,
-//                 5px 5px 1px 0px rgba(0,0,0,0.15),
-//                 6px 6px 0 0px #FCA311,
-//                 7px 7px 1px 0px rgba(0,0,0,0.15),
-//                 8px 8px 0 0px #FCA311,
-//                 9px 9px 1px 0px rgba(0,0,0,0.15),
-//                 10px 10px 0 0px #FCA311;
-// } 
+.deckOfCards img { // these are the box shadows for the "deck" of cards styling
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.15),
+                2px 2px 0 0px #FCA311,
+                3px 3px 1px 0px rgba(0,0,0,0.15),
+                4px 4px 0 0px #FCA311,
+                5px 5px 1px 0px rgba(0,0,0,0.15),
+                6px 6px 0 0px #FCA311,
+                7px 7px 1px 0px rgba(0,0,0,0.15),
+                8px 8px 0 0px #FCA311,
+                9px 9px 1px 0px rgba(0,0,0,0.15),
+                10px 10px 0 0px #FCA311;
+} 
 
 .hide {
     display: none;

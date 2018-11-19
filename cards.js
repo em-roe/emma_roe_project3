@@ -363,18 +363,26 @@ app.shuffle = function (array) {
     return array;
 };
 app.shuffle(tarotCards);
-const shuffledTarotCards = app.shuffle(tarotCards.slice());
-app.singleCard = shuffledTarotCards[0]
-app.secondCard = shuffledTarotCards[1]
-app.thirdCard = shuffledTarotCards[2]
+
+app.shuffledTarotCards = app.shuffle(tarotCards.slice());
+
+app.singleCard = app.shuffledTarotCards[0]
+app.secondCard = app.shuffledTarotCards[1]
+app.thirdCard = app.shuffledTarotCards[2]
 
 
 app.selectCard = function (){ 
     $('#selectCard').on('click', function(clickEvent){
         app.reset();
         // const randomCard = app.getRandomCard(tarotCards);
+        app.shuffle(tarotCards);
+        app.shuffledTarotCards = app.shuffle(tarotCards.slice());
+        
+        app.singleCard = app.shuffledTarotCards[0]
+        
         const cardnameReplaced = app.singleCard['name'].replace(/([A-Z])/g, ' $1'); // this is the regex to add a space before every capital letter
-        // $('.deckOfCards img').attr("src",`assets/${randomCard.name}.jpg`);
+
+
         $('.single img').attr("src",`assets/${app.singleCard['name']}.jpg`);
         $('.single img').addClass('animated slideInUp').one('animationend', function () {
             $(this).removeClass('animated slideInUp')
@@ -401,6 +409,14 @@ app.selectCard = function (){
 app.selectThree = function () {
     $('#selectThree').on('click', function () {
         app.reset();
+
+        app.shuffle(tarotCards);
+
+        app.shuffledTarotCards = app.shuffle(tarotCards.slice());
+
+        app.singleCard = app.shuffledTarotCards[0]
+        app.secondCard = app.shuffledTarotCards[1]
+        app.thirdCard = app.shuffledTarotCards[2]
         
         const cardnameReplaced = app.singleCard['name'].replace(/([A-Z])/g, ' $1'); 
         const cardnameReplaced2 = app.secondCard['name'].replace(/([A-Z])/g, ' $1'); 
@@ -436,7 +452,6 @@ app.selectThree = function () {
     app.reset = function(){
         $('.single img').attr("src", ``);
         $('.triple img').attr("src", ``);
-
     }
 
 } // ends the app.selectcard
